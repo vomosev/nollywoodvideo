@@ -9,7 +9,8 @@
   },
   "scripts": {
     "start": "node server/index.js",
-    "server": "node server/index.js"
+    "server": "node server/index.js",
+    "build": "echo \"No build step required for Express API\" && exit 0"
   },
   "keywords": [
     "nollywood",
@@ -27,9 +28,6 @@
     "express": "^4.19.2",
     "express-mysql-session": "^3.0.3",
     "express-session": "^1.18.0",
-    "mysql2": "^3.11.0",
-    "react": "latest",
-    "next": "latest",
-    "react-dom": "latest"
+    "mysql2": "^3.11.0"
   }
 }
