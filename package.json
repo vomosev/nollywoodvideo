@@ -8,18 +8,20 @@
     "node": ">=18.0.0"
   },
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "start": "node server/index.js",
     "server": "node server/index.js",
-    "vercel-build": "next build"
+    "client": "npm run dev --prefix frontend",
+    "client:install": "npm install --prefix frontend",
+    "client:build": "npm run build --prefix frontend",
+    "dev": "concurrently -n \"api,web\" -c \"blue,magenta\" \"npm run server\" \"npm run client\"",
+    "build": "npm run client:install && npm run client:build",
+    "postinstall": "npm run client:install"
   },
   "keywords": [
     "nollywood",
     "video",
     "streaming",
     "express",
-    "next",
     "mysql"
   ],
   "author": "NollywoodVideo",
@@ -31,14 +33,9 @@
     "express": "^4.19.2",
     "express-mysql-session": "^3.0.3",
     "express-session": "^1.18.0",
-    "mysql2": "^3.11.0",
-    "next": "^14.2.5",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "mysql2": "^3.11.0"
   },
   "devDependencies": {
-    "@types/node": "^20.14.10",
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0"
+    "concurrently": "^8.2.2"
   }
 }
