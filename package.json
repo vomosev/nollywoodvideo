@@ -10,7 +10,8 @@
   "scripts": {
     "start": "node server/index.js",
     "server": "node server/index.js",
-    "build": "echo \"No build step required for Express API\" && exit 0"
+    "build": "echo \"No build step required for Express API\" && exit 0",
+    "vercel-build": "echo \"No build step required for Express API\" && exit 0"
   },
   "keywords": [
     "nollywood",
